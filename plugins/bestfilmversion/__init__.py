@@ -28,7 +28,7 @@ lock = RLock()
 
 class BestFilmVersion(_PluginBase):
     # 插件名称
-    plugin_name = "收藏洗版"
+    plugin_name = "Plex收藏洗版"
     # 插件描述
     plugin_desc = "Jellyfin/Emby/Plex点击收藏电影后，自动订阅洗版。"
     # 插件图标
@@ -608,6 +608,7 @@ class BestFilmVersion(_PluginBase):
                         continue
 
                     id_list = [h.get('id') for h in _guid if h.get('id').__contains__("tmdb")]
+                    logger.debug(f'BestFilmVersion插件  id_list打印 {id_list}')
                     if not id_list:
                         continue
 
